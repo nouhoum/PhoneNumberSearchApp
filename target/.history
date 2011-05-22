@@ -1,0 +1,27 @@
+project
+help project
+help
+set Name Phone Number Search Application
+compile 
+compile
+update 
+~compile
+update
+update 
+eclipse
+compile 
+reload
+update 
+eclipse 
+run
+~compile
+run
+~run
+run
+~run
+exit
+run 
+run test.txt
+run test.txt test1.txt
+run
+run test.txt test1.txt

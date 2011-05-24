@@ -13,18 +13,19 @@ import Actor._
  * extract (french) phone numbers. It has been written for my blog
  * at blog.nouhoumtraore.com
  * 
- * Usage PhoneNumberSearchApp file1 file2 file3 ..... fileN
+ * Usage: PhoneNumberSearchApp file1 file2 file3 ..... fileN
  * 
  * @author Nouhoum TRAORE (@nouhoumtraore)
  */
 object PhoneNumberSearchApp extends App {
-  if (args.length == 0)
+  if (args.length == 0) {
     println("Please give files to parse at command line!")
-  else
+    println("Usage: PhoneNumberSearchApp file1 file2 file3 ..... fileN")
+  } else
     go(args)
 
   def go(args: Array[String]) = {
-	var start = System.currentTimeMillis
+	  var start = System.currentTimeMillis
     println("=========================")
    
     val tasks =
@@ -39,7 +40,8 @@ object PhoneNumberSearchApp extends App {
     println("Waiting for the master response....")
     val response = master !! tasks
 
-    println("Response arrived!!! = " + response + "\n====The following numbers has been found==== \n")
+    println("Response arrived!!! = " + response + 
+        "\n====The following numbers has been found==== \n")
     response match {
     	case Some(numbers:Set[Any]) =>
     		numbers foreach {println(_)}
@@ -78,8 +80,7 @@ object PhoneNumberSearchApp extends App {
           loadBalancer ! PoisonPill
           self.stop()
         }
-      case "Special" =>
-        self reply "This is the response to special"
+
       case tasks: Array[Task] =>
         println("Received task list size = " + tasks.length)
         tasks foreach { println(_) }
@@ -105,7 +106,7 @@ object PhoneNumberSearchApp extends App {
    * a set to the master actor.
    */
   class Worker extends Actor {
-	val phoneRegex = "0[1-9]([ .-]?[0-9]{2}){4}".r
+	  val phoneRegex = "0[1-9]([ .-]?[0-9]{2}){4}".r
 	
     def receive = {
       case Task(fileContent) =>

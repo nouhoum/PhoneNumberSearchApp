@@ -1,5 +1,0 @@
-#External Dependencies
-#Sun May 22 19:05:07 CEST 2011
-/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/rt.jar=src/main/scala/com/nouhoum/akka/PhoneNumberSearchApp.scala
-/home/nouhoum/dev/workspaces/tutorials/PhoneNumberSearchApp/project/boot/scala-2.9.0/lib/scala-library.jar=src/main/scala/com/nouhoum/akka/PhoneNumberSearchApp.scala
-/home/nouhoum/dev/workspaces/tutorials/PhoneNumberSearchApp/lib_managed/scala_2.9.0/compile/akka-actor-1.1.jar=src/main/scala/com/nouhoum/akka/PhoneNumberSearchApp.scala
